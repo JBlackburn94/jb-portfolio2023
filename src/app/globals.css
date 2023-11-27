@@ -3,10 +3,13 @@
 @tailwind utilities;
 
 body {
-    background-color: #FCFCFC;
+    color: white;
+    background-image: url('/background.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 nav {
-    background-color: #256EFF;
+    background-color: #1e217a;
 }
 
