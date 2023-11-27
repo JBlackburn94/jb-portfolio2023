@@ -43,9 +43,12 @@ export default function Navbar() {
       </div>
 
       {nav && (
-        <ul className="absolute top-20 left-0 z-30 flex flex-col items-center justify-center w-full h-50 bg-[#1e217a] rounded-lg animate-flip-down">
+        <ul className="absolute top-0 left-0 z-30 flex flex-col items-center justify-center w-full h-screen bg-[#1e217a] rounded-lg animate-flip-down">
           {links.map(({ id, title, link, att }) => (
-            <li key={id} className="my-4 text-xl capitalize hover:bg-[#3DDC97]">
+            <li
+              key={id}
+              className="my-4 p-4 text-xl capitalize hover:bg-[#3DDC97]"
+            >
               <Link onClick={() => setNav(!nav)} target={att} href={link}>
                 {title}
               </Link>
