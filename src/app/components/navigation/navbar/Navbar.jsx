@@ -1,7 +1,9 @@
 "use client";
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import Image from "next/image";
 import Link from "next/link";
+import Logo from "/public/J.CREATES.webp";
 
 export default function Navbar() {
   const links = [
@@ -25,8 +27,8 @@ export default function Navbar() {
   const [nav, setNav] = useState(false);
 
   return (
-    <nav className="h-16 flex justify-between items-center m-4 rounded-lg drop-shadow-lg">
-      <h1 className="ml-4 text-2xl">Jason Blackburn</h1>
+    <nav className="h-16 flex justify-between items-center m-4 rounded-lg drop-shadow-lg bg-black bg-opacity-50">
+      <Image src={Logo} alt="JB Dev Logo" className="h-50 w-auto" priority />
       <ul className="hidden md:flex">
         {links.map(({ link, title, id }) => (
           <li key={id} className="mx-4 text-xl hover:underline">
@@ -43,12 +45,10 @@ export default function Navbar() {
       </div>
 
       {nav && (
-        <ul className="absolute top-0 left-0 z-30 flex flex-col items-center justify-center w-full h-screen bg-[#1e217a] rounded-lg animate-flip-down">
+        <ul className="absolute top-0 left-0 z-30 flex flex-col items-center justify-start w-full h-screen bg-black animate-flip-down">
+          <Image src={Logo} alt="JB Dev Logo" className="h-50 w-auto" />
           {links.map(({ id, title, link, att }) => (
-            <li
-              key={id}
-              className="my-4 p-4 text-xl capitalize hover:bg-[#3DDC97]"
-            >
+            <li key={id} className="p-4 text-xl capitalize">
               <Link onClick={() => setNav(!nav)} target={att} href={link}>
                 {title}
               </Link>
