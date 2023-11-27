@@ -39,13 +39,13 @@ export default function Navbar() {
 
       <div
         onClick={() => setNav(!nav)}
-        className="z-40 pr-4 cursor-pointer md:hidden"
+        className="z-50 pr-4 cursor-pointer md:hidden"
       >
         {nav ? <FaTimes size={30} /> : <FaBars size={30} />}
       </div>
 
       {nav && (
-        <ul className="absolute top-0 left-0 z-30 flex flex-col items-center justify-start w-full h-screen bg-black animate-flip-down">
+        <ul className="absolute top-0 left-0 flex flex-col items-center justify-start w-full h-screen bg-black animate-flip-down z-40">
           <Image src={Logo} alt="JB Dev Logo" className="h-50 w-auto" />
           {links.map(({ id, title, link, att }) => (
             <li key={id} className="p-4 text-xl capitalize">
