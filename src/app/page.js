@@ -9,9 +9,10 @@ export default function Home() {
           <Image
             src={Header}
             alt="A heading image that says welcome"
-            className="h-auto w-1/2"
+            className="h-auto w-1/2 md:w-1/4 animate-fade-right animate-duration-500"
+            priority
           />
-          <p className="text-center">
+          <p className="text-center absolute top-[250px] w-1/2 md:top-80 animate-fade-left animate-duration-500 animate-delay-1000">
             My name is Jason, I'm a Frontend Developer living in London, UK.
           </p>
         </div>
