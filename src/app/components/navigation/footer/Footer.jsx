@@ -14,12 +14,12 @@ export default function Footer() {
     },
   ];
   return (
-    <footer className="rounded-lg bg-black bg-opacity-50 m-4 drop-shadow-lg">
-      <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+    <footer className="mx-4 mt-16 mb-4 bg-black bg-opacity-50 rounded-lg md:mt-4 drop-shadow-lg">
+      <div className="w-full max-w-screen-xl p-4 mx-auto md:py-8">
         <div className="sm:flex sm:items-center sm:justify-between">
           <a
             href="/"
-            className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
+            className="flex items-center mb-4 space-x-3 sm:mb-0 rtl:space-x-reverse"
           >
             <span className="self-center text-2xl whitespace-nowrap">
               Jason Blackburn
