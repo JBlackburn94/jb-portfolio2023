@@ -14,12 +14,12 @@ export default function Navbar() {
     },
     {
       id: "2",
-      link: "/about",
+      link: "/pages/about",
       title: "About",
     },
     {
       id: "3",
-      link: "/contact",
+      link: "/pages/contact",
       title: "Contact",
     },
   ];
@@ -27,8 +27,8 @@ export default function Navbar() {
   const [nav, setNav] = useState(false);
 
   return (
-    <nav className="h-16 flex justify-between items-center m-4 rounded-lg drop-shadow-lg bg-black bg-opacity-50">
-      <Image src={Logo} alt="JB Dev Logo" className="h-50 w-auto" priority />
+    <nav className="flex items-center justify-between h-16 m-4 bg-black bg-opacity-50 rounded-lg drop-shadow-lg">
+      <Image src={Logo} alt="JB Dev Logo" className="w-auto h-50" priority />
       <ul className="hidden md:flex">
         {links.map(({ link, title, id }) => (
           <li key={id} className="mx-4 text-xl hover:underline">
@@ -45,8 +45,8 @@ export default function Navbar() {
       </div>
 
       {nav && (
-        <ul className="absolute top-0 left-0 flex flex-col items-center justify-start w-full h-screen bg-black animate-flip-down z-40">
-          <Image src={Logo} alt="JB Dev Logo" className="h-50 w-auto" />
+        <ul className="absolute top-0 left-0 z-40 flex flex-col items-center justify-start w-full h-screen bg-black animate-flip-down">
+          <Image src={Logo} alt="JB Dev Logo" className="w-auto h-50" />
           {links.map(({ id, title, link, att }) => (
             <li key={id} className="p-4 text-xl capitalize">
               <Link onClick={() => setNav(!nav)} target={att} href={link}>

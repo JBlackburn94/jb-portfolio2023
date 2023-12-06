@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Header from "/public/Welcome.svg";
 import skillsHeader from "/public/Skills.svg";
@@ -5,6 +6,7 @@ import { FaHtml5, FaCss3Alt, FaReact, FaGithub } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
 import { TbBrandNextjs } from "react-icons/tb";
 import { SiMysql } from "react-icons/si";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const buttonLinks = [
@@ -76,14 +78,14 @@ export default function Home() {
         </div>
         <div className="flex items-center justify-center mt-10">
           {buttonLinks.map(({ id, title, link, att }) => (
-            <button
+            <a
+              href={link}
               key={id}
-              className="w-32 p-2 mx-4 text-black duration-200 bg-white rounded-md hover:scale-105 hover:bg-black hover:bg-opacity-50 hover:text-white"
+              target={att}
+              className="w-32 p-4 mx-4 text-center duration-200 bg-black bg-opacity-50 rounded-md hover:text-black hover:bg-white hover:scale-110"
             >
-              <a href={link} target={att}>
-                {title}
-              </a>
-            </button>
+              {title}
+            </a>
           ))}
         </div>
 
